@@ -99,11 +99,12 @@ class FadingEdgeScrollView extends StatefulWidget {
     double gradientFractionOnStart = 0.1,
     double gradientFractionOnEnd = 0.1,
   }) {
-    final controller = child.controller;
     //ignore: unnecessary_null_comparison
-    if (controller == null) {
+    if (child.controller == null) {
       throw Exception("Child must have controller set");
     }
+
+    final controller = child.controller!;
 
     return FadingEdgeScrollView._internal(
       key: key,
